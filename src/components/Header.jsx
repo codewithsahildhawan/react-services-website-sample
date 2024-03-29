@@ -24,7 +24,7 @@ const MainHeader = styled.header`
 
 .header-logo {
   height:auto;
-  max-width:30%
+  max-width:80%
 }
 
 `;

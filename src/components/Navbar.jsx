@@ -17,6 +17,11 @@ const Nav = styled.nav`
                 text-transform:uppercase;
                 color:${({theme}) =>theme.colors.dark_text};
                 font-weight:400;
+
+                &:hover,
+                &:active {
+                    color:${({theme}) =>theme.colors.light_text};
+                }
             }
         }
     }
