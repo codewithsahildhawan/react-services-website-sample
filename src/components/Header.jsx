@@ -2,9 +2,9 @@ import React from 'react'
 import Navbar from './Navbar'
 
 const Header = (props) => {
-  const phone = props.records.phone;
-  const email = props.records.email;
-  const address = props.records.address;
+  const phone =  (props.sitecontent) ? props.sitecontent.phone : "";
+  const email = (props.sitecontent) ? props.sitecontent.email : "";
+  const address = (props.sitecontent) ? props.sitecontent.address : "";
   return (
       <div>
         <div className="container-fluid bg-dark px-5 d-none d-lg-block">
@@ -26,7 +26,7 @@ const Header = (props) => {
                 </div>
             </div>
         </div>
-      <Navbar />
+      <Navbar sitecontent={props.sitecontent} />
       </div>
   )
 }

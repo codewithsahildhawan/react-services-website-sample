@@ -1,12 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const website_title = (props.sitecontent) ? props.sitecontent.website_title : "";
   return (
         <div className="container-fluid position-relative p-0">
             <nav className="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" className="navbar-brand p-0">
-                    <h1 className="text-primary m-0">React Demo Website</h1>
+                    <h1 className="text-primary m-0">{website_title}</h1>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span className="fa fa-bars"></span>

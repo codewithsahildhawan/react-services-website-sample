@@ -1,11 +1,26 @@
 import React, { useEffect } from 'react'
 
 function Home (props) {
-  const about_title = (props.records) ? props.records.about_page_content.atitle : "";
-  const about_description = (props.records) ? props.records.about_page_content.adescription : "";
-  const about_subtitle = (props.records) ? props.records.about_page_content.asubtitle : "";
-  const about_link = (props.records) ? props.records.about_page_content.alink : "";
-  const about_button = (props.records) ? props.records.about_page_content.abutton_text : "";
+  const about_title = (props.homepage) ? props.homepage.about_page_content.atitle : "";
+  const about_description = (props.homepage) ? props.homepage.about_page_content.adescription : "";
+  const about_subtitle = (props.homepage) ? props.homepage.about_page_content.asubtitle : "";
+  const about_link = (props.homepage) ? props.homepage.about_page_content.alink : "";
+  const about_button = (props.homepage) ? props.homepage.about_page_content.abutton_text : "";
+  useEffect(() => {
+    $(".header-carousel").owlCarousel({
+            animateOut: 'slideOutDown',
+            items: 1,
+            autoplay: true,
+            smartSpeed: 1000,
+            dots: false,
+            loop: true,
+            nav : true,
+            navText : [
+                '<i class="bi bi-arrow-left"></i>',
+                '<i class="bi bi-arrow-right"></i>'
+            ],
+        });
+    }, []); 
   return (
     <div>
       <div className="container-fluid position-relative p-0">

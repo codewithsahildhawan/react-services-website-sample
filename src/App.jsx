@@ -26,14 +26,17 @@ const App = () => {
     getData()
   }, [])
 
+  const websitecontent = records.website_content; 
+  const homepage = records.homepage;
+
   return  (
       <BrowserRouter>
-        <Header records={records} />
+        <Header sitecontent={websitecontent} />
         <Routes>
-          <Route path = "/" element = {<Home records={records} />}></Route>
-          <Route path = "/about" element = {<About records={records} />}></Route>
-          <Route path = "/services" element = {<Services records={records} />}></Route>
-          <Route path = "/contact" element = {<Contact records={records} />}></Route>
+          <Route path = "/" element = {<Home homepage={homepage} />}></Route>
+          <Route path = "/about" element = {<About />}></Route>
+          <Route path = "/services" element = {<Services />}></Route>
+          <Route path = "/contact" element = {<Contact />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
