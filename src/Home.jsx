@@ -1,22 +1,11 @@
 import React, { useEffect } from 'react'
 
-function Home () {
-
-    useEffect(() => {
-            $(".header-carousel").owlCarousel({
-                animateOut: 'slideOutDown',
-                items: 1,
-                autoplay: true,
-                smartSpeed: 1000,
-                dots: false,
-                loop: true,
-                nav : true,
-                navText : [
-                    '<i class="bi bi-arrow-left"></i>',
-                    '<i class="bi bi-arrow-right"></i>'
-                ],
-            });
-    }, []);  
+function Home (props) {
+  const about_title = (props.records) ? props.records.about_page_content.atitle : "";
+  const about_description = (props.records) ? props.records.about_page_content.adescription : "";
+  const about_subtitle = (props.records) ? props.records.about_page_content.asubtitle : "";
+  const about_link = (props.records) ? props.records.about_page_content.alink : "";
+  const about_button = (props.records) ? props.records.about_page_content.abutton_text : "";
   return (
     <div>
       <div className="container-fluid position-relative p-0">
@@ -189,15 +178,15 @@ function Home () {
                     </div>
                     <div className="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
                         <div className="section-title text-start mb-5">
-                            <h4 className="sub-title pe-3 mb-0">About Us</h4>
-                            <h1 className="display-3 mb-4">We are Ready to Help Improve Your Treatment.</h1>
-                            <p className="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                            <h4 className="sub-title pe-3 mb-0">{about_title}</h4>
+                            <h1 className="display-3 mb-4">{about_subtitle}</h1>
+                            <p className="mb-4">{about_description}</p>
                             <div className="mb-4">
                                 <p className="text-secondary"><i className="fa fa-check text-primary me-2"></i> Refresing to get such a personal touch.</p>
                                 <p className="text-secondary"><i className="fa fa-check text-primary me-2"></i> Duis aute irure dolor in reprehenderit in voluptate.</p>
                                 <p className="text-secondary"><i className="fa fa-check text-primary me-2"></i> Velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             </div>
-                            <a href="#" className="btn btn-primary rounded-pill text-white py-3 px-5">Discover More</a>
+                            <a href={about_link} target="_blank" className="btn btn-primary rounded-pill text-white py-3 px-5">{about_button}</a>
                         </div>
                     </div>
                 </div>

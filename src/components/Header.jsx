@@ -1,16 +1,19 @@
 import React from 'react'
 import Navbar from './Navbar'
 
-const Header = () => {
+const Header = (props) => {
+  const phone = props.records.phone;
+  const email = props.records.email;
+  const address = props.records.address;
   return (
       <div>
         <div className="container-fluid bg-dark px-5 d-none d-lg-block">
             <div className="row gx-0 align-items-center" style= {{ height: '45px' }}>
                 <div className="col-lg-8 text-center text-lg-start mb-lg-0">
                     <div className="d-flex flex-wrap">
-                        <a href="#" className="text-light me-4"><i className="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                        <a href="#" className="text-light me-4"><i className="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                        <a href="#" className="text-light me-0"><i className="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+                        <a href="#" className="text-light me-4"><i className="fas fa-map-marker-alt text-primary me-2"></i>{address}</a>
+                        <a href="#" className="text-light me-4"><i className="fas fa-phone-alt text-primary me-2"></i>{phone}</a>
+                        <a href="#" className="text-light me-0"><i className="fas fa-envelope text-primary me-2"></i>{email}</a>
                     </div>
                 </div>
                 <div className="col-lg-4 text-center text-lg-end">
